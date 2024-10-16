@@ -104,7 +104,6 @@ function toggleTodo(id) {
   saveTodos();
 }
 
-// Função para excluir uma tarefa
 function deleteTodo(id) {
   todos = todos.filter((t) => t.id !== id);
   renderTodos();
@@ -114,7 +113,7 @@ function deleteTodo(id) {
 function renderTodos() {
   todoList.innerHTML = "";
   todos.forEach(renderTodo);
-  updateTodoOrder(); // Adicione esta linha
+  updateTodoOrder();
 }
 
 addButton.addEventListener("click", addTodo);
@@ -125,8 +124,8 @@ todoInput.addEventListener("keypress", (e) => {
   }
 });
 
-renderTodos();
 loadTodos();
+renderTodos();
 
 function updateTodoOrder() {
   const todoItems = document.querySelectorAll(".todo-list-item");
