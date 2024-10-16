@@ -1,0 +1,155 @@
+@import url("todo-input.css");
+@import url("todo-checkbox.css");
+
+body {
+  background-color: #87a2ff;
+}
+
+.todo-title {
+  font-size: 2rem;
+  text-align: center;
+  color: #fff4b5;
+}
+
+.todo-container {
+  margin: 2rem auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.todo-add-button {
+  appearance: button;
+  background-color: #1899d6;
+  border: solid transparent;
+  border-radius: 16px;
+  border-width: 0 0 4px;
+  box-sizing: border-box;
+  color: #ffffff;
+  cursor: pointer;
+  display: inline-block;
+  font-size: 15px;
+  font-weight: 700;
+  letter-spacing: 0.8px;
+  line-height: 20px;
+  margin: 0;
+  outline: none;
+  overflow: visible;
+  padding: 13px 19px;
+  text-align: center;
+  text-transform: uppercase;
+  touch-action: manipulation;
+  transform: translateZ(0);
+  transition: filter 0.2s;
+  user-select: none;
+  -webkit-user-select: none;
+  vertical-align: middle;
+  white-space: nowrap;
+}
+
+.todo-add-button:after {
+  background-clip: padding-box;
+  background-color: #1cb0f6;
+  border: solid transparent;
+  border-radius: 16px;
+  border-width: 0 0 4px;
+  bottom: -4px;
+  content: "";
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  z-index: -1;
+}
+
+.todo-add-button:main,
+.todo-add-button:focus {
+  user-select: auto;
+}
+
+.todo-add-button:hover:not(:disabled) {
+  filter: brightness(1.1);
+}
+
+.todo-add-button:disabled {
+  cursor: auto;
+}
+
+.todo-add-button:active:after {
+  border-width: 0 0 0px;
+}
+
+.todo-add-button:active {
+  padding-bottom: 10px;
+}
+
+.todo-list-container {
+  margin: 2rem auto;
+  max-width: 600px;
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.todo-list-item {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  gap: 10px;
+  background: #d8e7f7;
+  border-radius: 10px;
+  padding: 10px;
+  cursor: grab;
+  box-sizing: border-box;
+}
+
+.todo-list-item-text {
+  font-size: 1.2rem;
+  font-weight: 500;
+  color: #000;
+}
+
+.todo-list-item-delete-button {
+  background-color: #ff4b4b;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  padding: 5px 10px;
+  cursor: pointer;
+  margin-left: auto;
+  transition: 0.2s;
+}
+
+.todo-list-item-delete-button:hover {
+  background-color: #ff0000;
+}
+
+.checked {
+  text-decoration: line-through;
+}
+
+.todo-list-item:active {
+  cursor: grabbing;
+}
+
+.sortable-ghost {
+  opacity: 0.5;
+  background: #c8ebfb;
+}
+
+@media (max-width: 480px) {
+  .todo-container {
+    gap: 20px;
+    flex-direction: column;
+  }
+
+  .todo-list-item {
+    flex-wrap: wrap;
+  }
+
+  .todo-list-item-delete-button {
+    margin-left: 0;
+    margin-top: 10px;
+  }
+}
